@@ -33,6 +33,13 @@ The Architecture is summarized in the table below
 <br><br>
 
 The implementation differs from the original architecture in that the activations used here are ReLU instead of tanh. It is a common practice to increase the Conv2D filters per layer as the spatial input dimensions decrease. 
-'''
+<br><br>
+The code block showing the Keras implementation of this architecture is shown below.
+```
 import keras as K
-'''
+
+```
+It is important to scale the input images to the range [0,1]. This ensures faster convergence. 
+
+
+
