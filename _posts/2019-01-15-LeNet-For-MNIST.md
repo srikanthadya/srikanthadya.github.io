@@ -29,3 +29,10 @@ The Architecture is summarized in the table below
 | Activation | 500  |   |
 | FC | 10  |   |
 | Softmax  | 10  |   |
+
+<br><br>
+
+The implementation differs from the original architecture in that the activations used here are ReLU instead of tanh. It is a common practice to increase the Conv2D filters per layer as the spatial input dimensions decrease. 
+'''
+import keras as K
+'''
