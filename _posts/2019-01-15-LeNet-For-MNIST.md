@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      LeNet For MNIST
-date:       2019-15-01
+date:       2019-01-15
 summary:    Implementing the LeNet Deep Learning Model on MNIST hand written digits data
 categories: Deep_Learning LeNet MNIST
 ---
