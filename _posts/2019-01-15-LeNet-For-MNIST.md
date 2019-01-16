@@ -6,7 +6,7 @@ summary:    Implementing the LeNet Deep Learning Model on MNIST hand written dig
 categories: Deep_Learning LeNet MNIST
 ---
 
-MNIST is one of the best studied datasets in computer vision. The goal of the dataset is to correctly identify the handwritten digits from 0-9.'NIST' stands for National Institute of Standards and Technology and 'M' for "modified".
+MNIST is one of the best studied datasets in computer vision. The goal of the dataset is to correctly identify the handwritten digits from 0-9.'NIST' stands for National Institute of Standards and Technology and 'M' for "modified". The dataset is modified to remove any image preprocessing burden so that the focus is solely on machine learning.  
 A more detailed description of the dataset can be obtained from [here](http://yann.lecun.com/exdb/mnist/)
 <br>
 <img src='/images/MnistExamples.png' alt=""/>
