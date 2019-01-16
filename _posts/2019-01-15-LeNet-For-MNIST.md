@@ -39,7 +39,10 @@ The code block showing the Keras implementation of this architecture is shown be
 import keras as K
 
 ```
-It is important to scale the input images to the range [0,1]. This ensures faster convergence. 
+It is important to scale the input images to the range [0,1]. This ensures faster convergence. The scaling is done by dividing every pixel by 255.0 . The labels need to be one-hot encoded since our output layer is going to be a softmax layer predicting 10 classes. This one-hot encoding takes a class value as an input and converts it into a binary vector with all zeros except for the index of the class. For example, if the class label is 3, the one-hot encoded vector will be [0, 0, 0, 1, 0, 0, 0 , 0, 0, 9]. The 4th index is '1' since the classes are from 0-9. This is achieved in keras using the "to_categorical()" function in "keras.utils.np_utils" .
+
+<br> <br>
+The model is trained for 20 epochs with a batch-size of 128 with SGD "mini-batch gradient decent" optimizer and a lerning rate of 0.01.
 
 
 
