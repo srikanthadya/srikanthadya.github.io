@@ -36,7 +36,52 @@ The implementation differs from the original architecture in that the activation
 <br><br>
 The code block showing the Keras implementation of this architecture is shown below.
 ```
-import keras as K
+'''
+# Created by Srikanth Adya at 1/15/2019
+
+Feature: Cofiguration variables set here
+# Build LeNet CONVNET
+
+'''
+
+from keras import backend as K
+from keras.models import Sequential
+from keras.layers.convolutional import Conv2D
+from keras.layers.convolutional import MaxPooling2D
+from keras.layers.core import Activation
+from keras.layers.core import Flatten
+from keras.layers.core import Dense
+
+class LeNet:
+    @staticmethod
+    def build(width, height, depth, classes):
+        # initialize the model
+        model = Sequential()
+        inputShape = (height, width, depth)
+
+        # CONV >> RELU >> POOL
+        model.add(Conv2D(20, (5,5), padding='same',
+                         input_shape=inputShape,
+						 name='))
+        model.add(Activation('relu'))
+        model.add(MaxPooling2D(pool_size=(2,2),strides=(2,2)))
+
+        # CONV >> RELU >> POOL
+        model.add(Conv2D(50, (5,5), padding='same',
+                         input_shape=inputShape))
+        model.add(Activation('relu'))
+        model.add(MaxPooling2D(pool_size=(2,2),strides=(2,2)))
+
+        # FC >> DENSE
+        model.add(Flatten())
+        model.add(Dense(500))
+        model.add(Activation('relu'))
+
+        # Softmax Classifier
+        model.add(Dense(classes))
+        model.add(Activation('softmax'))
+
+        return model
 
 ```
 It is important to scale the input images to the range [0,1]. This ensures faster convergence. The scaling is done by dividing every pixel by 255.0 . The labels need to be one-hot encoded since our output layer is going to be a softmax layer predicting 10 classes. This one-hot encoding takes a class value as an input and converts it into a binary vector with all zeros except for the index of the class. For example, if the class label is 3, the one-hot encoded vector will be [0, 0, 0, 1, 0, 0, 0 , 0, 0, 9]. The 4th index is '1' since the classes are from 0-9. This is achieved in keras using the "to_categorical()" function in "keras.utils.np_utils" .
@@ -44,5 +89,11 @@ It is important to scale the input images to the range [0,1]. This ensures faste
 <br> <br>
 The model is trained for 20 epochs with a batch-size of 128 with SGD "mini-batch gradient decent" optimizer and a lerning rate of 0.01.
 
-
+<br>
+<img src='/images/graph_run=.png' alt=""/>
+<br>
+<img src='/images/acc.svg' alt=""/>
+<br>
+<img src='/images/loss.svg' alt=""/>
+<br>
 
