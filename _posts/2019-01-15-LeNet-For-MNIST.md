@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      LeNet For MNIST
+title:      LeNet For MNIST ("Hello World")
 date:       2019-01-15
 summary:    Implementing the LeNet Deep Learning Model on MNIST hand written digits data
 categories: Deep_Learning LeNet MNIST
@@ -97,10 +97,6 @@ finally report the model accuracy.
 ```python
 '''
 # Created by Srikanth Adya at 1/15/2019
-
-Feature: Cofiguration variables set here
-# The HDF5 raw data variables are set in this file
-
 '''
 from dl_utils.nn.conv.lenet import LeNet
 from keras.optimizers import SGD
