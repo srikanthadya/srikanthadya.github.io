@@ -155,17 +155,17 @@ print(classification_report(testY.argmax(axis=1),
 <br>
 Tensorflow graph of the LeNet Architecture
 <br>
-<img src='/images/graph_run=.png' alt="" width="750"/>
+<img src='/images/graph_run=.png' alt="" width="700"/>
 <br>
 Loss function and Accuracy summaries
 <table>
 	<tr> 
-		<th> Loss </th>
 		<th> Accuracy </th>
+		<th> Loss </th>
 	</tr>
 	<tr> 
-		<th> <img src='/images/acc.svg' alt="" width="250"/> </th>
-		<th> <img src='/images/loss.svg' alt="" width="250"/> </th>
+		<th> <img src='/images/acc.svg' alt="" width="350"/> </th>
+		<th> <img src='/images/loss.svg' alt="" width="350"/> </th>
 	</tr>
 </table>
 <br>
