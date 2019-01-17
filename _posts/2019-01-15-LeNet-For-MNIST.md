@@ -162,6 +162,7 @@ Loss                 | Accuracy
 :-------------------:|:---------------------:
 ![](/images/acc.svg) | ![](/images/loss.svg) 
 <br>
+![](/images/acc.svg)
 This model was able to achieve 99% accuracy on the MNIST dataset.
 
 
