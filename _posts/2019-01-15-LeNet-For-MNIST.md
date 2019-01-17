@@ -158,11 +158,17 @@ Tensorflow graph of the LeNet Architecture
 <img src='/images/graph_run=.png' alt="" width="750"/>
 <br>
 Loss function and Accuracy summaries
-Loss                 | Accuracy            
-:-------------------:|:---------------------:
-![](/images/acc.svg) | ![](/images/loss.svg) 
+<table>
+	<tr> 
+		<th> Loss </th>
+		<th> Accuracy </th>
+	</tr>
+	<tr> 
+		<th> ![](/images/acc.svg) </th>
+		<th> ![](/images/loss.svg) </th>
+	</tr>
+</table>
 <br>
-![](https://back-prop.github.io/images/acc.svg)
 This model was able to achieve 99% accuracy on the MNIST dataset.
 
 
