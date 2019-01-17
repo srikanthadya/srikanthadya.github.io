@@ -32,7 +32,7 @@ The Architecture is summarized in the table below
 
 <br><br>
 
-The implementation differs from the original architecture in that the activations used here are ReLU instead of tanh. It is a common practice to increase the Conv2D filters per layer as the spatial input dimensions decrease. 
+The implementation differs from the original architecture in that the activations used here are ReLU instead of tanh. Also, it is a common practice to increase the Conv2D filters per layer as the spatial input dimensions decrease.
 <br><br>
 The code block showing the Keras implementation of this architecture is shown below.
 ```python
@@ -83,16 +83,87 @@ class LeNet:
         return model
 
 ```
-It is important to scale the input images to the range [0,1]. This ensures faster convergence. The scaling is done by dividing every pixel by 255.0 . The labels need to be one-hot encoded since our output layer is going to be a softmax layer predicting 10 classes. This one-hot encoding takes a class value as an input and converts it into a binary vector with all zeros except for the index of the class. For example, if the class label is 3, the one-hot encoded vector will be [0, 0, 0, 1, 0, 0, 0 , 0, 0, 9]. The 4th index is '1' since the classes are from 0-9. This is achieved in keras using the "to_categorical()" function in "keras.utils.np_utils" .
+It is important to scale the input images to the range [0,1]. This ensures faster convergence. The scaling is done by dividing every pixel by 255.0 .
+The labels need to be one-hot encoded since our output layer is going to be a softmax layer predicting 10 classes.
+This one-hot encoding takes a class value as an input and converts it into a binary vector with all zeros except for the index of the class.
+For example, if the class label is 3, the one-hot encoded vector will be [0, 0, 0, 1, 0, 0, 0 , 0, 0, 0]. The 4th index is '1' since the classes are from 0-9.
+This is achieved in keras using the "to_categorical()" function in "keras.utils.np_utils" .
 
-<br> <br>
-The model is trained for 20 epochs with a batch-size of 128 with SGD "mini-batch gradient decent" optimizer and a lerning rate of 0.01.
+<br>
+The model is trained for 20 epochs with a batch-size of 128 with SGD "mini-batch gradient decent" optimizer and a lerning rate of 0.01. The network can be visualized
+as a tensorflow graph in tensorboard with very little code. The following code block is used to load the data, preprocess the images, set the model parameters , train the model and
+finally report the model accuracy.
+
+```python
+'''
+# Created by Srikanth Adya at 1/15/2019
+
+Feature: Cofiguration variables set here
+# The HDF5 raw data variables are set in this file
+
+'''
+from dl_utils.nn.conv.lenet import LeNet
+from keras.optimizers import SGD
+from sklearn.preprocessing import LabelBinarizer
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+from keras.datasets import mnist
+from keras import backend as K
+import matplotlib.pyplot as plt
+from keras.utils import np_utils
+from keras.callbacks import TensorBoard
+
+import numpy as np
+
+#dataset = datasets.fetch_mldata('MNIST Original')
+data = mnist.load_data()
+
+tbCallBack = TensorBoard(log_dir='./logs', histogram_freq=0, write_graph=True, write_images=True)
+
+#data = data.reshape(data.shape[0],28,28,1)
+
+(trainX, trainY,), (testX, testY) = mnist.load_data()
+print(trainX.shape)
+if K.image_data_format() == "channels_first":
+	trainX = trainX.reshape((trainX.shape[0], 1, 28, 28))
+	testX = testX.reshape((testX.shape[0], 1, 28, 28))
+
+# otherwise, we are using "channels last" ordering, so the design
+# matrix shape should be: num_samples x rows x columns x depth
+else:
+	trainX = trainX.reshape((trainX.shape[0], 28, 28, 1))
+	testX = testX.reshape((testX.shape[0], 28, 28, 1))
+
+
+trainX = trainX.astype("float32")/255.0
+testX = testX.astype("float32")/255.0
+
+le = LabelBinarizer()
+trainY = np_utils.to_categorical(trainY,10)
+testY = np_utils.to_categorical(testY,10)
+
+
+opt = SGD(lr=0.01)
+model = LeNet.build(width=28, height=28, depth=1, classes=10)
+model.compile(loss='categorical_crossentropy', optimizer=opt,
+              metrics=['accuracy'])
+
+H = model.fit(trainX, trainY, validation_data=(testX, testY),
+              batch_size=128, epochs=20, verbose=1, callbacks=[tbCallBack])
+
+predictions = model.predict(testX, batch_size=128)
+print(classification_report(testY.argmax(axis=1),
+                            predictions.argmax(axis=1)))
+```
 
 <br>
-<img src='/images/graph_run=.png' alt=""/>
+Tensorflow graph of the LeNet Architecture
+<img src='/images/graph_run=.png' alt="" width="200"/>
 <br>
-<img src='/images/acc.svg' alt=""/>
+Loss function and Accuracy summaries
+<img src='/images/acc.svg' alt="" width="100"/>
+<img src='/images/loss.svg' alt="" width="100"/>
 <br>
-<img src='/images/loss.svg' alt=""/>
-<br>
+
+
 
