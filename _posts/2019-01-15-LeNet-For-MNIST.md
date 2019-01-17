@@ -163,9 +163,9 @@ Tensorflow graph of the LeNet Architecture
 <br>
 Loss function and Accuracy summaries
 <br>
-| Loss | Accuracy |
+| Accuracy | Loss |
 |---|---|
-| <img src='/images/acc.svg' alt="" width="400"/> | <img src='/images/loss.svg' alt="" width="400"/> |
+| ![](/images/acc.svg) | ![](/images/loss.svg) |
 <br>
 
 
