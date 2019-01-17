@@ -164,8 +164,8 @@ Loss function and Accuracy summaries
 		<th> Accuracy </th>
 	</tr>
 	<tr> 
-		<th> ![](/images/acc.svg) </th>
-		<th> ![](/images/loss.svg) </th>
+		<th> <img src='/images/acc.svg' alt="" width="250"/> </th>
+		<th> <img src='/images/loss.svg' alt="" width="250"/> </th>
 	</tr>
 </table>
 <br>
