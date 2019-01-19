@@ -50,7 +50,7 @@ Loss function and Accuracy summaries
 		<th> Training Loss </th>
 	</tr>
 	<tr> 
-		<th> <img src='/images/acc_dvc.svg' alt="" width="350"/> </th>
+		<th> <img src='/images/acc _dvc.svg' alt="" width="350"/> </th>
 		<th> <img src='/images/loss_dvc.svg' alt="" width="350"/> </th>
 	</tr>
   <tr> 
