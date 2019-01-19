@@ -28,6 +28,71 @@ a batch size of 64 was used unlike the book where batch size of 128 was recommen
 because without the reduction the same accuracy wasn't achieved. A binary_crossentropy loss function was used since there were only two classes.
 The model was run for 75 epochs.  
 <br>
+```python
+from config import config
+print(config)
+from dl_utils.preprocessing import ImageToArrayPreprocessor
+from dl_utils.preprocessing import SimplePreprocessor
+from dl_utils.preprocessing import PatchPreprocessor
+from dl_utils.preprocessing import MeanPreprocessor
+#from dl_utils.callbacks import TrainingMonitor
+from keras.callbacks import TensorBoard
+from dl_utils.io import HDF5DatasetGenerator
+from dl_utils.nn.conv import AlexNet
+from keras.preprocessing.image import ImageDataGenerator
+from keras.optimizers import Adam
+import json
+import os
+
+# construct the training image generator for data augmentation
+aug = ImageDataGenerator(rotation_range=20, zoom_range=0.15,
+	width_shift_range=0.2, height_shift_range=0.2, shear_range=0.15,
+	horizontal_flip=True, fill_mode="nearest")
+
+tbCallBack = TensorBoard(log_dir='./logs', histogram_freq=0, write_graph=True, write_images=True)
+# load the RGB means for the training set
+means = json.loads(open(config.DATASET_MEAN).read())
+
+# initialize the image preprocessors
+sp = SimplePreprocessor(227, 227)
+pp = PatchPreprocessor(227, 227)
+mp = MeanPreprocessor(means["R"], means["G"], means["B"])
+iap = ImageToArrayPreprocessor()
+
+# initialize the training and validation dataset generators
+trainGen = HDF5DatasetGenerator(config.TRAIN_HDF5, 64, aug=aug,
+	preprocessors=[pp, mp, iap], classes=2)
+valGen = HDF5DatasetGenerator(config.VAL_HDF5, 64,
+	preprocessors=[sp, mp, iap], classes=2)
+
+# initialize the optimizer
+print("[INFO] compiling model...")
+opt = Adam(lr=0.5e-3)
+model = AlexNet.build(width=227, height=227, depth=3,classes=2, reg=0.0002)
+model.compile(loss="binary_crossentropy", optimizer=opt,metrics=["accuracy"])
+
+# construct the set of callbacks
+path = os.path.sep.join([config.OUTPUT_PATH, "{}.png".format(os.getpid())])
+#callbacks = [TrainingMonitor(path)]
+
+# train the network
+model.fit_generator(
+	trainGen.generator(),
+	steps_per_epoch=trainGen.numImages // 64,
+	validation_data=valGen.generator(),
+	validation_steps=valGen.numImages // 64,
+	epochs=75,
+	max_queue_size=64 * 2,
+	callbacks=[tbCallBack], verbose=1)
+
+# save the model to file
+print("[INFO] serializing model...")
+model.save(config.MODEL_PATH, overwrite=True)
+
+# close the HDF5 datasets
+trainGen.close()
+valGen.close()
+```
 
 The model was able to achieve a validation accuracy of 93% slightly higher than what the original vanila implementation quotes.  
 Epoch 70/75  
