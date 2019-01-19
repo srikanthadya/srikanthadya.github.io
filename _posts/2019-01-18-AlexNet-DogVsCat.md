@@ -71,10 +71,6 @@ opt = Adam(lr=0.5e-3)
 model = AlexNet.build(width=227, height=227, depth=3,classes=2, reg=0.0002)
 model.compile(loss="binary_crossentropy", optimizer=opt,metrics=["accuracy"])
 
-# construct the set of callbacks
-path = os.path.sep.join([config.OUTPUT_PATH, "{}.png".format(os.getpid())])
-#callbacks = [TrainingMonitor(path)]
-
 # train the network
 model.fit_generator(
 	trainGen.generator(),
