@@ -6,4 +6,5 @@ summary:    A little bit of motivation on a hump day
 categories: motivation Steve-Jobs
 ---
 
-<video src="https://youtu.be/2B-XwPjn9YY" width="320" height="200" controls preload></video>
+{% include youtube.html id=dQw4w9WgXcQ %}
+
