@@ -7,5 +7,5 @@ categories: motivation Steve-Jobs
 youtubeId:  2B-XwPjn9YY
 ---
 
-{% include youtube.html id=page.youtubeId %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2B-XwPjn9YY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
