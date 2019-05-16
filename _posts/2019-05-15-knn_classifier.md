@@ -5,6 +5,9 @@ date:       2019-05-16
 summary:    MNIST hand written digits classification using KNN
 categories: Deep_Learning KNN MNIST
 ---
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 In the first post we had seen how LeNet was able to achieve a 99% accuracy in classifying the hand written digits of the MNIST dataset. In this post we will see how for a well cured dataset like the MNIST, even simple ML algorithms like KNN will be able to achieve similar classification accuracies. The key here being, "well cured". Each and every image has been heavily pre-processed — including cropping, perfect thresholding, and centered and hence does not accurately represent the real world handwritten digit problem. Never the less it is worth noting that the same classification task can be achieved using a much simpler algorithm. 
 <br>
