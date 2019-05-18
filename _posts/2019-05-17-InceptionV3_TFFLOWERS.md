@@ -265,11 +265,11 @@ To perform a training step, you must first extract and transform the training da
 
 >Without pipelining, the CPU and the GPU/TPU sit idle much of the time:
 
->![with_pipeline]( https://docs.google.com/uc?export=download&id=1yc9sFN4vDfJceuWN_8F9woMBe8-KbOq5)
+>![with_pipeline](https://docs.google.com/uc?export=download&id=1yc9sFN4vDfJceuWN_8F9woMBe8-KbOq5)
 
 >With pipelining, idle time diminishes significantly:
 
->![with_pipeline]( https://docs.google.com/uc?export=download&id=1xyB9Ds9ABcLhX_6ur7m1asYuYCtZxE67)
+>![with_pipeline](https://docs.google.com/uc?export=download&id=1xyB9Ds9ABcLhX_6ur7m1asYuYCtZxE67)
 
 >The tf.data API provides a software pipelining mechanism through the tf.data.Dataset.prefetch transformation, which can be used to decouple the time when data is produced from the time when data is consumed. In particular, the transformation uses a background thread and an internal buffer to prefetch elements from the input dataset ahead of the time they are requested. The number of elements to prefetch should be equal to (or possibly greater than) the number of batches consumed by a single training step. You could either manually tune this value, or set it to tf.data.experimental.AUTOTUNE which will prompt the tf.data runtime to tune the value dynamically at runtime.
 
