@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Classification of Flowers using Tensorflow 2.0
-date:       2019-01-15
+date:       2019-05-17
 summary:    Implementing InceptionV3 Deep Learning Model on TF_FLOWERS dataset on Google Colab platform
 categories: Deep_Learning InceptionV3 TF_FLOWERS Feature_Extraction Fine_Tuning Google_Colab
 ---
