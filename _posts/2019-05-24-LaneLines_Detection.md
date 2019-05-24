@@ -1,3 +1,10 @@
+---
+layout:     post
+title:      Basic Lane Line Detection
+date:       2019-05-24
+summary:    Real time lane line detection using OpenCV
+categories: SDC Lane_Line_Detection Hough_Transform Edge_Detection Google_Colab
+---
 # **Finding Lane Lines on the Road**  
   
 One of the most basic aspects of driving a car (safely) is to make sure the car is within a lane. A good human driver does it almost involuntarily by constantly correcting to make sure the vehicle doesn't veer off into another vehicles path. What we humans do visually can be replicated in an autonomous vehicle using a series of Computer Vision techniques. The objective of this implementation and the process pipeline required to achieve this is explained below.  
