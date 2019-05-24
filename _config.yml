@@ -1,8 +1,8 @@
 # Site settings
 title:       Back-Prop
-email:       your_email@example.com
+email:       srikanthadya@gmail.com
 author:      Srikanth Adya
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+description: "Explaining what I know and learning what I don't"
 baseurl:     ""
 url:         "http://back-prop.github.io"
 date_format: "%b %-d, %Y"
