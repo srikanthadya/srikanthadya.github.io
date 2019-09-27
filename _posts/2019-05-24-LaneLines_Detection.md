@@ -69,7 +69,7 @@ Canny edge detection is a technique used to identify gradients of any orientatio
  
 
 <figure>
- <center><img src="../images/edges.png"/>  </center>
+ <center><img src="/images/edges.png"/>  </center>
  <figcaption>
  <p></p> 
  <p style="text-align: center;"> Sample Canny Edge Detection output </p>
@@ -89,18 +89,18 @@ $\sigma$ is the single tunable parameter and the default value is set to 0.33 wh
 Since we are only interested in the lane lines, the region of the image that is not immediately in front of the vehicle, like the cars in the adjascent lane, the barriers at the extreme left and right can all be neglected. This is achieved by masking the blurred image with a polygon that covers only the region of interest. This polygon is defined by four vertices [bottom_left, top_left, top_right, bottom_right]. The mask used is as shown below
  
  <figure>
- <center><img src="/images/mask.png"/> 
+ <center><img src="/images/mask.png"/> </center>
  <figcaption>
  <p></p> 
- <p style="text-align: center;"> Region of Interest Mask </p> </center>
+ <p style="text-align: center;"> Region of Interest Mask </p> 
  </figcaption>
   </figure>  
 
   <figure>
- <center><img src="/images/masked_edges.png"/> 
+ <center><img src="/images/masked_edges.png"/> </center>
  <figcaption>
  <p></p> 
- <p style="text-align: center;"> Masked Edge image </p> </center>
+ <p style="text-align: center;"> Masked Edge image </p>
  </figcaption>
   </figure>
 Two different polygons were used for the two different sets of videos in the project. The solidWhiteRight and the solidYellowLeft videos have the same mask where as the challenge video has a different mask. 
@@ -113,9 +113,9 @@ $y=mx+b$
 
 The same line when transformed in the $m-b$ space will be a point as shown in the image below
 
-<center><img src="/images/hough-mb_parameter_space.png"/> 
+<center><img src="/images/hough-mb_parameter_space.png"/> </center>
 
-[Image from Understanding Hough Transform with Python by Alyssa Quek ](https://alyssaq.github.io/2014/understanding-hough-transform)</center>
+[Image from Understanding Hough Transform with Python by Alyssa Quek ](https://alyssaq.github.io/2014/understanding-hough-transform)
 
 Where this representation fails is when the line is vertical with an infinite slope. To over come this, the $\rho-\theta$ space is used. The same line in $\rho-\theta$  space can be represented as 
 
