@@ -33,9 +33,11 @@ Overlay the extrapolated line on the original image
 Grayscale and Blurring
 The basic idea behind lane line detection is the identification of the edges that constitute the lane. Although edge detection can be done on a RGB image, the effective edge is determined by the channel with the maximum gradient. So, for efficient edge detection, the first task is to convert to gray scale image.
 
-Blurring is another important technique which helps reduce high frequency content in the image and hence reduces noise and helps in better edge extraction. There are several blurring methods available in openCV. The most commonly used method is the Gaussian Blur. In this method, a M x N kernel is convolved with the input image and the intensity of each pixel is modified to the weighted average of the intensities of the pixels in the kernel. The Gaussian function used is shown below
-$$G(x,y) = \frac{1}{2\pi\sigma^2}e^\frac{x^2+y^2}{2\sigma^2}$$
-here $x$ and $y$ are the distances from the kernel center and $\sigma$ is the standard deviation of the pixels in the Gaussian kernal
+Blurring is another important technique which helps reduce high frequency content in the image and hence reduces noise and helps in better edge extraction. There are several blurring methods available in openCV. The most commonly used method is the Gaussian Blur. In this method, a M x N kernel is convolved with the input image and the intensity of each pixel is modified to the weighted average of the intensities of the pixels in the kernel. The Gaussian function used is shown below 
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=G(x,y)&space;=&space;\frac{1}{2\pi\sigma^2}e^\frac{x^2&plus;y^2}{2\sigma^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G(x,y)&space;=&space;\frac{1}{2\pi\sigma^2}e^\frac{x^2&plus;y^2}{2\sigma^2}" title="G(x,y) = \frac{1}{2\pi\sigma^2}e^\frac{x^2+y^2}{2\sigma^2}" /></a>
+
+here *x* and *y* are the distances from the kernel center and σ is the standard deviation of the pixels in the Gaussian kernal
 
 ## Canny Edge Detection
 Canny edge detection is a technique used to identify gradients of any orientation in an image that helps us extract the structural information in an image. The algorithm internally performs the following four steps
@@ -63,7 +65,7 @@ The same line when transformed in the $m-b$ space will be a point as shown in th
 
 Where this representation fails is when the line is vertical with an infinite slope. To over come this, the $\rho-\theta$ space is used. The same line in $\rho-\theta$ space can be represented as
 
-$\rho = x*cos(\theta) + y*sin(\theta)$
+<a href="https://www.codecogs.com/eqnedit.php?latex=$\rho&space;=&space;x*cos(\theta)&space;&plus;&space;y*sin(\theta)$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$\rho&space;=&space;x*cos(\theta)&space;&plus;&space;y*sin(\theta)$" title="$\rho = x*cos(\theta) + y*sin(\theta)$" /></a>
 
 In the image below we have two points (5,25) and (20,10) represented as edge points. If we plot all the $\rho$ values corresponding to $\theta$ varying from $[-90^0  to  90^0]$, we see that the resulting $\rho - \theta$ curves for these two points intersect at $\rho = 21$ and $\theta = 45^0$
 
@@ -102,7 +104,9 @@ The average slope of these line making up the left and right lines can be obtain
 ## Draw and overlay the extrapolated lane lines on the image
 Using the averaged line slopes and intercepts , we can find the x co-ordinate of the start and end of the line
 
-$$leftStartX = (leftStartY - leftAvgIntercept) / leftAvgSlope$$$$leftEndX = (leftEndY - leftAvgIntercept) / leftAvgSlope$$$$rightStartX = (rightStartY - rightAvgIntercept) / rightAvgSlope$$$$rightEndX = (rightEndY - rightAvgIntercept) / rightAvgSlope$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=leftStartX&space;=&space;(leftStartY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;leftEndX&space;=&space;(leftEndY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;rightStartX&space;=&space;(rightStartY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope&space;\\&space;rightEndX&space;=&space;(rightEndY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope" target="_blank"><img src="https://latex.codecogs.com/gif.latex?leftStartX&space;=&space;(leftStartY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;leftEndX&space;=&space;(leftEndY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;rightStartX&space;=&space;(rightStartY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope&space;\\&space;rightEndX&space;=&space;(rightEndY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope" title="leftStartX = (leftStartY - leftAvgIntercept) / leftAvgSlope \\ leftEndX = (leftEndY - leftAvgIntercept) / leftAvgSlope \\ rightStartX = (rightStartY - rightAvgIntercept) / rightAvgSlope \\ rightEndX = (rightEndY - rightAvgIntercept) / rightAvgSlope" /></a>
+
+
 As was the case with the masks, since the views are different between the two sets of videos, the challenge video uses a different EndY value than the other two videos.
 
 These lines are drawn on the original image with a set transparency to highlight the identified lane lines as shown below
