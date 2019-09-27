@@ -43,15 +43,15 @@ $$G(x,y) = \frac{1}{2\pi\sigma^2}e^\frac{x^2+y^2}{2\sigma^2}$$
 here $x$ and $y$ are the distances from the kernel center and $\sigma$ is the standard deviation of the pixels in the Gaussian kernal  
 
 <figure>
- <center><img src="/images/gray.png"/>
+ <center><img src="/images/gray.png"/></center>
  <figcaption>
  <p></p> 
- <p style="text-align: center;"> Raw Image </p> </center>
+ <p style="text-align: center;"> Raw Image </p> 
  </figcaption>
- <center><img src="/images/gray_blur.png"/> 
+ <center><img src="/images/gray_blur.png"/> </center>
   <figcaption>
  <p></p> 
- <p style="text-align: center;"> Blurred Image </p> </center>
+ <p style="text-align: center;"> Blurred Image </p> 
  </figcaption>
 </figure>
 
@@ -69,10 +69,10 @@ Canny edge detection is a technique used to identify gradients of any orientatio
  
 
 <figure>
- <center><img src="../images/edges.png"/> 
+ <center><img src="../images/edges.png"/>  </center>
  <figcaption>
  <p></p> 
- <p style="text-align: center;"> Sample Canny Edge Detection output </p> </center>
+ <p style="text-align: center;"> Sample Canny Edge Detection output </p>
  </figcaption>
  </figure>
  
