@@ -44,12 +44,12 @@ $$G(x,y) = \frac{1}{2\pi\sigma^2}e^\frac{x^2+y^2}{2\sigma^2}$$
 here $x$ and $y$ are the distances from the kernel center and $\sigma$ is the standard deviation of the pixels in the Gaussian kernal  
 
 <figure>
- <center><img src="https://docs.google.com/uc?export=download&id=1-0VSkgJre4rlFUhi_nt3T9bH711DSQGg"/>
+ <center><img src="../images/gray.png"/>
  <figcaption>
  <p></p> 
  <p style="text-align: center;"> Raw Image </p> </center>
  </figcaption>
- <center><img src="https://docs.google.com/uc?export=download&id=1-3KkcJV0kPbvI9oFYbgRwBJvNwVMaxkr"/> 
+ <center><img src="../images/gray_blur.png"/> 
   <figcaption>
  <p></p> 
  <p style="text-align: center;"> Blurred Image </p> </center>
@@ -70,7 +70,7 @@ Canny edge detection is a technique used to identify gradients of any orientatio
  
 
 <figure>
- <center><img src="https://docs.google.com/uc?export=download&id=1UZi9Iuh8uOK9x937gy99hvt49DjwVYkL"/> 
+ <center><img src="../images/edges.png"/> 
  <figcaption>
  <p></p> 
  <p style="text-align: center;"> Sample Canny Edge Detection output </p> </center>
@@ -90,7 +90,7 @@ $\sigma$ is the single tunable parameter and the default value is set to 0.33 wh
 Since we are only interested in the lane lines, the region of the image that is not immediately in front of the vehicle, like the cars in the adjascent lane, the barriers at the extreme left and right can all be neglected. This is achieved by masking the blurred image with a polygon that covers only the region of interest. This polygon is defined by four vertices [bottom_left, top_left, top_right, bottom_right]. The mask used is as shown below
  
  <figure>
- <center><img src="https://docs.google.com/uc?export=download&id=11UC22OwUXU-xYv_xJYaVaZzfJbvCpIdD"/> 
+ <center><img src="../images/mask.png"/> 
  <figcaption>
  <p></p> 
  <p style="text-align: center;"> Region of Interest Mask </p> </center>
@@ -98,7 +98,7 @@ Since we are only interested in the lane lines, the region of the image that is 
   </figure>  
 
   <figure>
- <center><img src="https://docs.google.com/uc?export=download&id=1-MObzzaGCA8c5Nba1OTYYUOhiU4jXmWM"/> 
+ <center><img src="../images/masked_edges.png"/> 
  <figcaption>
  <p></p> 
  <p style="text-align: center;"> Masked Edge image </p> </center>
@@ -136,7 +136,7 @@ plt.imshow(image,cmap='gray')
 
 ```
 
-<center><img src="https://docs.google.com/uc?export=download&id=1-o2Wv1XK5O9UHM8sg95mr-IC_wmdns6j" /></center>
+<center><img src="../images/Hough_Explained_2_0.png" /></center>
 
 
 
