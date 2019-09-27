@@ -1,4 +1,10 @@
-
+---
+layout:     post
+title:      Advanced Lane Line Detection
+date:       2019-05-24
+summary:    Real time lane line detection using OpenCV
+categories: SDC Lane_Line_Detection Distortion_Correction Perspective_Transform
+---
 
 ## Camera Calibration
 
