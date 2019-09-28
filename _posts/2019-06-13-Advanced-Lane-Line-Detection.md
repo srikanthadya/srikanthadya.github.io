@@ -47,9 +47,9 @@ In order to correct these two types of distortions, we can use a calibration tec
 
 <center>
 
-https://latex.codecogs.com/gif.latex?%24%24%20x_%7Bdistorted%7D%20%3D%20x_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24
+![](https://latex.codecogs.com/gif.latex?%24%24%20x_%7Bdistorted%7D%20%3D%20x_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24)
 
-https://latex.codecogs.com/gif.latex?%24%24%20y_%7Bdistorted%7D%20%3D%20y_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24
+![](https://latex.codecogs.com/gif.latex?%24%24%20y_%7Bdistorted%7D%20%3D%20y_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24)
   
 </center>
 
