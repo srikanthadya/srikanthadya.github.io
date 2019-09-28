@@ -31,8 +31,7 @@ plt.show()
 ```
 
 
-![png](writeup_files/writeup_4_0.png)
-
+<center><img src="/images/writeup_4_0.png" width=500 /> </center>
 
 ## Distortion Correction
 
@@ -42,15 +41,15 @@ The second type of distortion is **tangential distortion** as seen in the second
 
 In order to correct these two types of distortions, we can use a calibration technique where in we capture standard shapes from the camera and compare its location with an undistorted image. The commonly used pattern for this purpose is a chessboard pattern where we can detect the corners in the image and come up with a transformation that projects the detected corners from the distorted space to the undistorted space. 
 
-<center><img src="https://docs.google.com/uc?export=download&id=1RQQf7Rj3jn8rv16dg1mv3wgGnr8k5EV2" width=500 /> </center>
+<center><img src="/images/writeup_6_0.png" width=500 /> </center>
 
 ### Radial Distortion Correction
 
 <center>
 
-![eq1](https://latex.codecogs.com/gif.latex?%24%24%20x_%7Bdistorted%7D%20%3D%20x_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24)
+https://latex.codecogs.com/gif.latex?%24%24%20x_%7Bdistorted%7D%20%3D%20x_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24
 
-![eq2](https://latex.codecogs.com/gif.latex?%24%24%20y_%7Bdistorted%7D%20%3D%20y_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24)
+https://latex.codecogs.com/gif.latex?%24%24%20y_%7Bdistorted%7D%20%3D%20y_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24
   
 </center>
 
