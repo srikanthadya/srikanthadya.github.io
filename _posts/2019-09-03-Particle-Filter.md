@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Vehicle Localization 
-date:       2019-09-26
+date:       2019-09-03
 summary:    Vehicle localization using Particle Filter 
 categories: SDC Particle_Filter Localization  
 ---
