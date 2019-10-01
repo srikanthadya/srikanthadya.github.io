@@ -250,7 +250,7 @@ plt.show()
 ```
 
 
-![png](writeup_files/writeup_15_0.png)
+<center><img src="/images/writeup_15_0.png" width="500"></center>
 
 
 But instead of taking the histogram for the whole image, if we can slide a window from the bottom of the image to the top, we can find the base_x values of the left and right lines along the y axis by looking at the point on x axis which has the highest activations. If the number of pixels in this window exceeds a **minpix** value then the center of the window is recomputed. In the image below we can see the sliding window and the base points of each window. We can then fit a second order polynomial to these points and get the left and right lines drawn in yellow below 
@@ -263,33 +263,22 @@ But instead of taking the histogram for the whole image, if we can slide a windo
 ## Computing radius of curvature
 
 The radius of curvature of the fitted lines can be computed using the formula
-<center>
-  
-![eq6](https://latex.codecogs.com/gif.latex?%24%24%20R_%7Bcurve%7D%20%3D%20%5Cfrac%7B1&plus;%282Ay&plus;B%29%5E2%29%5E%5Cfrac%7B3%7D%7B2%7D%7D%7B%7C2A%7C%7D%20%24%24)
 
-</center>
-
+<center><img src="https://latex.codecogs.com/gif.latex?%24%24%20R_%7Bcurve%7D%20%3D%20%5Cfrac%7B1&plus;%282Ay&plus;B%29%5E2%29%5E%5Cfrac%7B3%7D%7B2%7D%7D%7B%7C2A%7C%7D%20%24%24"></center>
 
  
 Here A and B are the coefficients of the fitted curve. The equation is evaluated at the lowest part of the image , i.e  y = image.shape[0] in order to get the curvature closest to the vehicle. 
 
 There are two curvature values that we get, the left line curvature and the right line curvature. The two are averaged and the mean radius of curvature of the lane is reported. 
 
-<center>
-  
-![eq7](https://latex.codecogs.com/gif.latex?%24%24%20R_%7Bcurvature%7D%20%3D%20%5Cfrac%7BLeftLane_%7Bcurvature%7D%20&plus;%20RightLane_%7Bcurvature%7D%7D%7B2%7D%20%24%24)
-  
-  </center>
+<center><img src="https://latex.codecogs.com/gif.latex?%24%24%20R_%7Bcurvature%7D%20%3D%20%5Cfrac%7BLeftLane_%7Bcurvature%7D%20&plus;%20RightLane_%7Bcurvature%7D%7D%7B2%7D%20%24%24"></center>
+
 
 The distance from the center of the lane is computed by subtracting the lane center from the image center as shown below
 
-<center>
+<center><img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Balign*%7D%20Lane%20center%20%3D%20LeftBase_x%20&plus;%20%28RightBase_x%20-%20LeftBase_x%29%20%5C%5C%20Image%20Center%20%3D%20image.shape%5B1%5D//2%20%5C%5C%20Distance%20from%20Center%20%3D%20%28Image%20Center%20-%20Lane%20Center%29%20*%203.7/700%20%5Cend%7Balign*%7D"></center>
 
-![eq8](https://latex.codecogs.com/gif.latex?%5Cbegin%7Balign*%7D%20Lane%20center%20%3D%20LeftBase_x%20&plus;%20%28RightBase_x%20-%20LeftBase_x%29%20%5C%5C%20Image%20Center%20%3D%20image.shape%5B1%5D//2%20%5C%5C%20Distance%20from%20Center%20%3D%20%28Image%20Center%20-%20Lane%20Center%29%20*%203.7/700%20%5Cend%7Balign*%7D)
-
-</center>
-
-<center><img src="https://docs.google.com/uc?export=download&id=1yMbr6WTTtflDFDa2sOqmX_gzNUUZL172" width=600 /></center>
+<center><img src="https://docs.google.com/uc?export=download&id=1yMbr6WTTtflDFDa2sOqmX_gzNUUZL172" width="600" /></center>
 
 ## Video
 
