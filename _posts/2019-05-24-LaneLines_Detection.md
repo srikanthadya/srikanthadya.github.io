@@ -41,7 +41,7 @@ The basic idea behind lane line detection is the identification of the edges tha
 Blurring is another important technique which helps reduce high frequency content in the image and hence reduces noise and helps in better edge extraction. There are several blurring methods available in openCV. The most commonly used method is the Gaussian Blur. In this method, a **M x N** kernel is convolved with the input image and the intensity of each pixel is modified to the weighted average of the intensities of the pixels in the kernel. The Gaussian function used is shown below  
 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=G(x,y)&space;=&space;\frac{1}{2\pi\sigma^2}e^\frac{x^2&plus;y^2}{2\sigma^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G(x,y)&space;=&space;\frac{1}{2\pi\sigma^2}e^\frac{x^2&plus;y^2}{2\sigma^2}" title="G(x,y) = \frac{1}{2\pi\sigma^2}e^\frac{x^2+y^2}{2\sigma^2}" /></a>
+<center><a href="https://www.codecogs.com/eqnedit.php?latex=G(x,y)&space;=&space;\frac{1}{2\pi\sigma^2}e^\frac{x^2&plus;y^2}{2\sigma^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G(x,y)&space;=&space;\frac{1}{2\pi\sigma^2}e^\frac{x^2&plus;y^2}{2\sigma^2}" title="G(x,y) = \frac{1}{2\pi\sigma^2}e^\frac{x^2+y^2}{2\sigma^2}" /></a></center>
 
 
 here $x$ and $y$ are the distances from the kernel center and $\sigma$ is the standard deviation of the pixels in the Gaussian kernal  
@@ -64,9 +64,9 @@ A kernel size of [9 x 9] was used in this case.
 Canny edge detection is a technique used to identify gradients of any orientation in an image that helps us extract the structural information in an image. The algorithm internally performs the following four steps  
 1. Gaussian blurring to smooth the input image  
 2. Finding intensity gradients $G_x$ and $G_y$  
-><center><a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" title="Edge Magnitude = \sqrt{G_{x}^2+G_{y}^2}" /></a>
+><center><a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" title="Edge Magnitude = \sqrt{G_{x}^2+G_{y}^2}" /></a></center?
 
-><a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Orientation&space;(\theta)&space;=&space;tan^{-1}(\frac{G_y}{G_x})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Orientation&space;(\theta)&space;=&space;tan^{-1}(\frac{G_y}{G_x})" title="Edge Orientation (\theta) = tan^{-1}(\frac{G_y}{G_x})" /></a></center>
+><center><a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Orientation&space;(\theta)&space;=&space;tan^{-1}(\frac{G_y}{G_x})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Orientation&space;(\theta)&space;=&space;tan^{-1}(\frac{G_y}{G_x})" title="Edge Orientation (\theta) = tan^{-1}(\frac{G_y}{G_x})" /></a></center>
 3. Non Maxima suppression  
 >The entire image is scanned to check for any unwanted pixels that might not constitute an edge. Every pixel is compared with the pixels in a 3x3 neighborhood. If the magnitude of the central pixel is greater than the pixels in the gradient direction the central pixel is retained or else dropped.  
 4. Hysteresis Thresholding  
@@ -83,12 +83,12 @@ Canny edge detection is a technique used to identify gradients of any orientatio
  
 The canny edge detecfor needs two thresholds values that are tunable. The function used in this implementation tries to make it a single parameter function by using the mean of the image and setting the lower and upper threshold as below
 
-<center><a href="https://www.codecogs.com/eqnedit.php?latex=mean&space;=&space;mean\&space;of\&space;the\&space;image\&space;tensor" target="_blank"><img src="https://latex.codecogs.com/gif.latex?mean&space;=&space;mean\&space;of\&space;the\&space;image\&space;tensor" title="mean = mean\ of\ the\ image\ tensor" /></a>
+<center><a href="https://www.codecogs.com/eqnedit.php?latex=mean&space;=&space;mean\&space;of\&space;the\&space;image\&space;tensor" target="_blank"><img src="https://latex.codecogs.com/gif.latex?mean&space;=&space;mean\&space;of\&space;the\&space;image\&space;tensor" title="mean = mean\ of\ the\ image\ tensor" /></a></center>
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=threshold_{lower}&space;=&space;mean&space;*&space;(1-\sigma)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?threshold_{lower}&space;=&space;mean&space;*&space;(1-\sigma)" title="threshold_{lower} = mean * (1-\sigma)" /></a>
+<center><a href="https://www.codecogs.com/eqnedit.php?latex=threshold_{lower}&space;=&space;mean&space;*&space;(1-\sigma)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?threshold_{lower}&space;=&space;mean&space;*&space;(1-\sigma)" title="threshold_{lower} = mean * (1-\sigma)" /></a></center>
 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=threshold_{upper}&space;=&space;mean&space;*&space;(1&plus;\sigma)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?threshold_{upper}&space;=&space;mean&space;*&space;(1&plus;\sigma)" title="threshold_{upper} = mean * (1+\sigma)" /></a></center>
+<center><a href="https://www.codecogs.com/eqnedit.php?latex=threshold_{upper}&space;=&space;mean&space;*&space;(1&plus;\sigma)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?threshold_{upper}&space;=&space;mean&space;*&space;(1&plus;\sigma)" title="threshold_{upper} = mean * (1+\sigma)" /></a></center>
 
 $\sigma$ is the single tunable parameter and the default value is set to 0.33 which seems to work well. 
  
