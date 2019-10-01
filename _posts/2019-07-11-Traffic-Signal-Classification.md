@@ -306,12 +306,12 @@ plt.show()
 ```
 
 
-![png](Traffic-Sign-Classifier_files/Traffic-Sign-Classifier_16_0.png)
+<center><img src="/images/Traffic-Sign-Classifier_16_0.png /></center>
 
 
 ## Model Architecture
 
-<center><img src="https://docs.google.com/uc?export=download&id=1Ct01XI3Fof8KckS1xRn4aGzYkY43-uZg" width=500 /> </center>
+<center><img src="/images/LeNet5.png" width=500 /> </center>
 
 The model architecture is based on [Yan LeCun's LeNet-5](http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf) architecture shown above. 
 
@@ -434,11 +434,11 @@ plt.show()
 ```
 
 
-<center><img src="/images/Traffic-Sign-Classifier_19_0.png" width="500"></center> 
+<center><img src="/images/Traffic-Sign-Classifier_19_0.png" width="500" /></center> 
 
 
 ## Predict using trained model
 
 Using the pretrained model the top-5 predictions were as shown
 
-<center><img src="https://docs.google.com/uc?export=download&id=11P20MTst63wVRMqUpqzN6w4Cd9UA7P8n" width=700 /> </center>
+<center><img src="/images/top5.png" width=700 /> </center>
