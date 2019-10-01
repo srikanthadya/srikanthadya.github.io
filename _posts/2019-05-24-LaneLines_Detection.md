@@ -64,8 +64,7 @@ A kernel size of [9 x 9] was used in this case.
 Canny edge detection is a technique used to identify gradients of any orientation in an image that helps us extract the structural information in an image. The algorithm internally performs the following four steps  
 1. Gaussian blurring to smooth the input image  
 2. Finding intensity gradients $G_x$ and $G_y$  
-><center><a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" title="Edge Magnitude = \sqrt{G_{x}^2+G_{y}^2}" /></a></center?
-
+><center><a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" title="Edge Magnitude = \sqrt{G_{x}^2+G_{y}^2}" /></a></center>
 ><center><a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Orientation&space;(\theta)&space;=&space;tan^{-1}(\frac{G_y}{G_x})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Orientation&space;(\theta)&space;=&space;tan^{-1}(\frac{G_y}{G_x})" title="Edge Orientation (\theta) = tan^{-1}(\frac{G_y}{G_x})" /></a></center>
 3. Non Maxima suppression  
 >The entire image is scanned to check for any unwanted pixels that might not constitute an edge. Every pixel is compared with the pixels in a 3x3 neighborhood. If the magnitude of the central pixel is greater than the pixels in the gradient direction the central pixel is retained or else dropped.  
