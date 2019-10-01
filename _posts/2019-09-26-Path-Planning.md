@@ -28,7 +28,7 @@ Representing curved road profiles in a cartesian coordinate system is sometimes 
 `4 < d < 8 ` | center lane |
 ` 8 < d < 12 ` | right lane |
 
-![](cartVsFre.png)
+![](/images/cartVsFre.png)
 
 ## Path planning approach
 
