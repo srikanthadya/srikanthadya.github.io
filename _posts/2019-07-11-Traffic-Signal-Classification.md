@@ -1,3 +1,10 @@
+---
+layout:     post
+title:      Traffic Signal Classification
+date:       2019-07-11
+summary:    German Traffic Signal Classification using Convolution Neural Network
+categories: SDC CNN 
+---
 
 ## Dataset Summary & Exploration
 
