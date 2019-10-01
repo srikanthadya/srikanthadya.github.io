@@ -65,15 +65,15 @@ In order to make the model less sensitve to the scene lighting and texture, two 
 	```Lambda(lambda x: (x/255.)-0.5,input_shape=(160,320,3))```
 2. **Random Brightness perturbation**
 	The BGR image is converted to HSV colormap and the V channel is perturbed by a random number inorder to change its brightness value.This new image is also added to the dataset to augment it with additional images representing varying lighting conditions. 
-	<center><img src="/images/brightness_augment.png" width="500" /></center>
+	<center><img src="/images/brightness_augment.png" width="900" /></center>
   
 3. **Cropping the image**
 	Parts of the image representing the farfield is cropped off so that the model sees less noise and learns mostly from the lane information. To achieve this the top and bottom of the image is cropped to retain only the lane information. The cropping is also achieved in batches using the Cropping2D layer in keras. 
-		<center><img src="/images/cropped.png" width="700" /></center>
+		<center><img src="/images/cropped.png" width="900" /></center>
 
 4. **Flipping the image** 
 	Since the car was driven in a loop it mostly takes a left turn during training. To add balance to the dataset, the images and the steering angles are flipped and the new data is added to the training and validation datasets. 
-	<center><img src="/images/flipped.png" width="700" /></center>
+	<center><img src="/images/flipped.png" width="900" /></center>
 
 5. **Steering correction**
    Since the steering angle value corresponds to the center dash camera, for images from the left and the right cameras, a correction value needs to be defined. A value of 0.2 was suggested in the lecture videos. For the current model the following correction was used 
@@ -121,14 +121,14 @@ To drive the model in autonomous mode the following command was used
 
 The trained model was successful in driving between the lanes throughout the track. 
 
-![auto_mode](https://github.com/srikanthadya/CarND-Behavioral-Cloning-P3/blob/master/images/movie.gif)
+<center><img src="https://github.com/srikanthadya/CarND-Behavioral-Cloning-P3/blob/master/images/movie.gif" /></center>
 
 ## Donkey Car
 
 
 The Donkey Car project is an open source DIY project which also uses the Behavioral Cloning technique to make an RC car g round a track that it was trained on. The link below is of a Donkey Car trained using a similar CNN as implemented in this writeup.
 
-[Donkey Car](https://www.youtube.com/watch?v=TNJVmyCh8Uw&feature=youtu.be)
+<center><video src="https://www.youtube.com/watch?v=TNJVmyCh8Uw&feature=youtu.be" </video></center>
 
 ## Files Uploaded
 
