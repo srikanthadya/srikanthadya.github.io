@@ -68,7 +68,6 @@ These transformation coefficients *(  k_1, k_2, k_3, p_1, p_2 )* , along with th
 
 can then be used to undistort every frame that we extract from the camera feed. Here $c_x and \ c_y $ are principal points which is usually the image center and ***f_x***  and ***f_y*** are the focal length expressed in pixels. The camera matrix is intrinsic to a camera.
 
-\
 
 In oder to get these parameters we can use OpenCV function ```cv2.calibrateCamera``` . This function needs the object points and the image points as inputs. The **object points** are the coordinates of the corners in the undistorted image and **image points** are the actual coordinates as captured by the camera. 
 
@@ -282,9 +281,7 @@ The distance from the center of the lane is computed by subtracting the lane cen
 
 ## Video
 
-[Output Video](https://github.com/srikanthadya/CarND-Advanced-Lane-Lines/blob/master/project_video_output.mp4)
-
-<video src="https://docs.google.com/uc?export=download&id=1-2XsTt1iCh8PS7HnLrgHsMlWTCIeWLQH" width="320" height="200" controls preload></video>
+<center><video src="https://docs.google.com/uc?export=download&id=1-2XsTt1iCh8PS7HnLrgHsMlWTCIeWLQH" width="500" height="300" controls preload></video></center>
 
 ## Discussion 
 
