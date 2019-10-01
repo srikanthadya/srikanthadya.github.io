@@ -127,7 +127,7 @@ The trained model was successful in driving between the lanes throughout the tra
 
 The Donkey Car project is an open source DIY project which also uses the Behavioral Cloning technique to make an RC car g round a track that it was trained on. The link below is of a Donkey Car trained using a similar CNN as implemented in this writeup.
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=TNJVmyCh8Uw&feature=youtu.be" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=TNJVmyCh8Uw&feature=youtu.be" frameborder="0" allow="autoplay;encrypted-media" allowfullscreen></iframe>
 
 
 ## Files Uploaded
