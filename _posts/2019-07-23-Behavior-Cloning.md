@@ -1,4 +1,10 @@
-
+---
+layout:     post
+title:      Behavioral Cloning
+date:       2019-07-23
+summary:    Autonomous Driving through Behavioral Cloning
+categories: SDC CNN 
+---
 # Behavioral Cloning
 
 The aim of this project is to train a neural network so that, given an image taken from a dash cam , 
