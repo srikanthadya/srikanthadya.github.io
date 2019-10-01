@@ -45,34 +45,20 @@ In order to correct these two types of distortions, we can use a calibration tec
 
 ### Radial Distortion Correction
 
-<center>
-
-<img src="https://latex.codecogs.com/gif.latex?%24%24%20x_%7Bdistorted%7D%20%3D%20x_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24" />
-
-
-<img src="https://latex.codecogs.com/gif.latex?%24%24%20y_%7Bdistorted%7D%20%3D%20y_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24 />
-  
+<center><img src="https://latex.codecogs.com/gif.latex?%24%24%20x_%7Bdistorted%7D%20%3D%20x_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24" /></center>
+<center><img src="https://latex.codecogs.com/gif.latex?%24%24%20y_%7Bdistorted%7D%20%3D%20y_%7Bideal%7D%281&plus;k_1%20r%5E2%20&plus;%20k_2%20r%5E4%20&plus;%20k_3%20r%5E6%29%20%24%24 />
 </center>
 
 
 
 ### Tangential Distortion Correction
 
-<center>
-  
-<img src="https://latex.codecogs.com/gif.latex?%24%24%20x_%7Bcorrected%7D%20%3D%20x%20&plus;%20%5B2p_1%20xy%20&plus;%20p_2%28r%5E2%20&plus;%202x%5E2%29%5D%20%24%24" />
-
-
-<img src="https://latex.codecogs.com/gif.latex?%24%24%20y_%7Bcorrected%7D%20%3D%20y%20&plus;%20%5B2p_1%28r%5E2%20&plus;%202y%5E2%29%20&plus;%202p_2xy%5D%20%24%24" />
-  
-</center>
+<center><img src="https://latex.codecogs.com/gif.latex?%24%24%20x_%7Bcorrected%7D%20%3D%20x%20&plus;%20%5B2p_1%20xy%20&plus;%20p_2%28r%5E2%20&plus;%202x%5E2%29%5D%20%24%24" /></center>
+<center><img src="https://latex.codecogs.com/gif.latex?%24%24%20y_%7Bcorrected%7D%20%3D%20y%20&plus;%20%5B2p_1%28r%5E2%20&plus;%202y%5E2%29%20&plus;%202p_2xy%5D%20%24%24" /></center>
 
 These transformation coefficients *(  k_1, k_2, k_3, p_1, p_2 )* , along with the camera matrix 
-<center>
+<center><img src="https://latex.codecogs.com/gif.latex?%24%24%20camera%5C%20matrix%20%3D%20%7B%5Cbegin%7Bbmatrix%7D%20f_x%20%26%200%20%26%20c_x%20%5C%5C%200%20%26%20f_y%20%26%20c_y%5C%5C%200%20%26%200%20%26%201%5C%5C%20%5Cend%7Bbmatrix%7D%20%7D%24%24" /></center>
 
-<img src="https://latex.codecogs.com/gif.latex?%24%24%20camera%5C%20matrix%20%3D%20%7B%5Cbegin%7Bbmatrix%7D%20f_x%20%26%200%20%26%20c_x%20%5C%5C%200%20%26%20f_y%20%26%20c_y%5C%5C%200%20%26%200%20%26%201%5C%5C%20%5Cend%7Bbmatrix%7D%20%7D%24%24" />
-
-</center>
 
 can then be used to undistort every frame that we extract from the camera feed. Here $c_x and \ c_y $ are principal points which is usually the image center and ***f_x***  and ***f_y*** are the focal length expressed in pixels. The camera matrix is intrinsic to a camera.
 
@@ -125,8 +111,7 @@ ax[1].set_title('Distortion Corrected')
 plt.show() 
 ```
 
-
-![png](writeup_files/writeup_7_0.png)
+<center><img src="/images/writeup_7_0.png" width="500" /></center>
 
 
 ## Binary Thresholding
@@ -150,13 +135,9 @@ plt.show()
 
 ```
 
+<center><img src="/images/writeup_9_0.png" width="500" /></center>
 
-![png](writeup_files/writeup_9_0.png)
-
-
-
-![png](writeup_files/writeup_9_1.png)
-
+<center><img src="/images/writeup_9_1.png" width="500" /></center>
 
 The second image above is a thresholded image where the S channel is thresholded such that all pixels below an intesity value of 160 is set to zero. The third image is a binary image created from the thresholded image. Any pixel with an intensity higher than zero is set to one. 
 
@@ -188,8 +169,7 @@ plt.show()
 
 ```
 
-
-![png](writeup_files/writeup_11_0.png)
+<center><img src="/images/writeup_11_0.png" width="500" /></center>
 
 
 ## Perspective Transform
@@ -232,11 +212,10 @@ plt.show()
 ```
 
 
-![png](writeup_files/writeup_13_0.png)
+<center><img src="/images/writeup_13_0.png" width="500" /></center>
 
+<center><img src="/images/writeup_13_1.png" width="500" /></center>
 
-
-![png](writeup_files/writeup_13_1.png)
 
 
 ## Lane Line Detection
