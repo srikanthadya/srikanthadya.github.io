@@ -121,6 +121,7 @@ To drive the model in autonomous mode the following command was used
 The trained model was successful in driving between the lanes throughout the track. 
 
 <center><img src="https://github.com/srikanthadya/CarND-Behavioral-Cloning-P3/blob/master/images/movie.gif" width="700"/></center>
+<iframe width="560" height="315" src="https://github.com/srikanthadya/CarND-Behavioral-Cloning-P3/blob/master/images/movie.gif" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Donkey Car
 
