@@ -378,7 +378,7 @@ The image below shows the convergence with and without image normalization.
 
 |     Non - Normalized Convergence      |    Gray Normalized Convergence  |  Color Normalized Convergence |
 |:----------------------------------------------------------:|:----------------------------------------------------:|:---------------------------------------------------:|
-|<img src="https://docs.google.com/uc?export=download&id=13DWUL1Kl_ucylDgaa45WM2cHCWalRyTC" width=250 /> |<img src="https://docs.google.com/uc?export=download&id=154zpmDJiH7jDWI-oe-SYmMh984JPyNub" width=250 />|<img src="https://docs.google.com/uc?export=download&id=1ERH8WmceaoBx_BkruT6rjoVAYDd4cqIH" width=250 />
+|<img src="https://docs.google.com/uc?export=download&id=13DWUL1Kl_ucylDgaa45WM2cHCWalRyTC" width="250" /> |<img src="https://docs.google.com/uc?export=download&id=154zpmDJiH7jDWI-oe-SYmMh984JPyNub" width="250" />|<img src="https://docs.google.com/uc?export=download&id=1ERH8WmceaoBx_BkruT6rjoVAYDd4cqIH" width="250" />
 
 
 |                  |     Lerning Rate   |    Epoch     |    Keep Prob    |   Beta    |   Train Accuracy |Validation Accuracy | Test Accuracy | Comment | 
@@ -441,4 +441,4 @@ plt.show()
 
 Using the pretrained model the top-5 predictions were as shown
 
-<center><img src="/images/top5.png" width=700 /> </center>
+<center><img src="/images/top5.png" width="500" /> </center>
