@@ -2,7 +2,7 @@
 layout:     post
 title:      Advanced Lane Line Detection
 date:       2019-06-13
-summary:    Real time lane line detection using OpenCV
+summary:    Advanced lane line detection using OpenCV
 categories: SDC Lane_Line_Detection Distortion_Correction Perspective_Transform
 ---
 
@@ -31,7 +31,7 @@ plt.show()
 ```
 
 
-<img src="/images/writeup_4_0.png" width=500 />
+<center><img src="/images/writeup_4_0.png" width="500" /></center>
 
 ## Distortion Correction
 
@@ -41,7 +41,7 @@ The second type of distortion is **tangential distortion** as seen in the second
 
 In order to correct these two types of distortions, we can use a calibration technique where in we capture standard shapes from the camera and compare its location with an undistorted image. The commonly used pattern for this purpose is a chessboard pattern where we can detect the corners in the image and come up with a transformation that projects the detected corners from the distorted space to the undistorted space. 
 
-<img src="/images/writeup_6_0.png" width=500 />
+<center><img src="/images/writeup_6_0.png" width="500" /></center>
 
 ### Radial Distortion Correction
 
