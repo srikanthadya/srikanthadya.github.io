@@ -293,7 +293,7 @@ While this implementation is much smoother and more accurate than the Lane Line 
 3. The overall run time of the pipeline was also something that prevents it from being able to be used in realtime lane line identification. The video has 25 frames per sec and the processing time for each frame in this code is about 0.2 sec thats about 3 frames per sec. The time taken by the indivudual functions are listed below. Some of these needs to be further optimized to be able to come close to make it real time. But then, the ```VideoFileClip``` funtion that extracts frames from the video file itself takes about 0.25 sec. This is an overhead that we need to live with. 
 
 
->> Time taken by perspective_transform 0.009672403335571289\
+> Time taken by perspective_transform 0.009672403335571289\
 Time taken by **find_lane_pixels** 0.01395559310913086\
 Time taken by fit_poly 0.008010387420654297\
 Time taken by search_around_poly 0.048485517501831055\
