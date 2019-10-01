@@ -21,7 +21,7 @@ This predicted steering angle is compared to the desired steering angle and thie
 The model weights are updated during the process of reducing this loss function through back propagation and thus the predctions are brought closer to 
 the measured values. 
 
-![behavioralCloningframework](images/framework.png)
+<center><img src="/images/framework.png" width="500" /></center>
 
 
 ## Simulator Environment
@@ -32,10 +32,12 @@ the images from 3 front mounted cameras along with the corresponding steering an
 
 |Simulator | Training Mode|
 :---------:|:------------:|
-![simulator](images/simulator.png)|![simulator](images/training_mode.png)|
+<center><img src="/images/simulator.png" width="500" /></center> | <center><img src="/images/training_mode.png" width="500" /></center>|
+
 
 To generate the training data, the car was driven around the track in the forward direction for about 6 laps and in the reverse direction for about 4 laps. The idea was to make sure the model generalizes to lanes curving to either sides of the car. This gave a good enough distribution of steering angle as shown below
-![steering angle](images/steering_dist.png)
+
+<center><img src="/images/steering_dist.png" width="500" /></center>
 
 ## Data Preprocessing and Augmentation
 
@@ -57,14 +59,16 @@ In order to make the model less sensitve to the scene lighting and texture, two 
 	```Lambda(lambda x: (x/255.)-0.5,input_shape=(160,320,3))```
 2. **Random Brightness perturbation**
 	The BGR image is converted to HSV colormap and the V channel is perturbed by a random number inorder to change its brightness value.This new image is also added to the dataset to augment it with additional images representing varying lighting conditions. 
-    ![brightness_augment](images/brightness_augment.png)
+	<center><img src="/images/brightness_augment.png" width="500" /></center>
   
 3. **Cropping the image**
 	Parts of the image representing the farfield is cropped off so that the model sees less noise and learns mostly from the lane information. To achieve this the top and bottom of the image is cropped to retain only the lane information. The cropping is also achieved in batches using the Cropping2D layer in keras. 
-    ![cropped](images/cropped.png)
+		<center><img src="/images/cropped.png" width="500" /></center>
+
 4. **Flipping the image** 
 	Since the car was driven in a loop it mostly takes a left turn during training. To add balance to the dataset, the images and the steering angles are flipped and the new data is added to the training and validation datasets. 
-    ![flipped](images/flipped.png)
+	<center><img src="/images/flipped.png" width="500" /></center>
+
 5. **Steering correction**
    Since the steering angle value corresponds to the center dash camera, for images from the left and the right cameras, a correction value needs to be defined. A value of 0.2 was suggested in the lecture videos. For the current model the following correction was used 
 
@@ -110,6 +114,7 @@ To drive the model in autonomous mode the following command was used
 ```python drive.py model.h5```
 
 The trained model was successful in driving between the lanes throughout the track. 
+
 ![auto_mode](https://github.com/srikanthadya/CarND-Behavioral-Cloning-P3/blob/master/images/movie.gif)
 
 ## Donkey Car
