@@ -5,7 +5,6 @@ date:       2019-07-23
 summary:    Autonomous Driving through Behavioral Cloning
 categories: SDC CNN 
 ---
-# Behavioral Cloning
 
 The aim of this project is to train a neural network so that, given an image taken from a dash cam , 
 the model is able to predict the steering angle required to maintain the car at the center of the lane. 
@@ -128,7 +127,7 @@ The trained model was successful in driving between the lanes throughout the tra
 
 The Donkey Car project is an open source DIY project which also uses the Behavioral Cloning technique to make an RC car g round a track that it was trained on. The link below is of a Donkey Car trained using a similar CNN as implemented in this writeup.
 
-<center><video src="https://www.youtube.com/watch?v=TNJVmyCh8Uw&feature=youtu.be"  width="500" height="300" controls preload></video></center>
+<center>![](https://www.youtube.com/watch?v=TNJVmyCh8Uw&feature=youtu.be)</center>
 
 ## Files Uploaded
 
