@@ -100,7 +100,7 @@ plt.show()
 ```
 
 
-![png](Traffic-Sign-Classifier_files/Traffic-Sign-Classifier_6_0.png)
+<center><img src="/images/Traffic-Sign-Classifier_6_0.png" width="500"></center> 
 
 
 ## Unbalanced Datasets
@@ -128,8 +128,7 @@ print("The class '{0}' has the maximun number of samples > sample count = {1}".f
 ```
 
 
-![png](Traffic-Sign-Classifier_files/Traffic-Sign-Classifier_8_0.png)
-
+<center><img src="/images/Traffic-Sign-Classifier_8_0.png" width="500"></center> 
 
     The class 'Speed limit (20km/h)' has the least number of samples > sample count = 180
     The class 'Speed limit (50km/h)' has the maximun number of samples > sample count = 2010
@@ -274,8 +273,7 @@ plt.grid(False)
 plt.show()
 ```
 
-
-![png](Traffic-Sign-Classifier_files/Traffic-Sign-Classifier_12_0.png)
+<center><img src="/images/Traffic-Sign-Classifier_12_0.png" width="500"></center> 
 
 
 ## Pickle dump the Augmented Data
@@ -436,7 +434,7 @@ plt.show()
 ```
 
 
-![png](Traffic-Sign-Classifier_files/Traffic-Sign-Classifier_19_0.png)
+<center><img src="/images/Traffic-Sign-Classifier_19_0.png" width="500"></center> 
 
 
 ## Predict using trained model
