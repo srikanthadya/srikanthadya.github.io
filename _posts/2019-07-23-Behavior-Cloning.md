@@ -27,7 +27,7 @@ This predicted steering angle is compared to the desired steering angle and thie
 The model weights are updated during the process of reducing this loss function through back propagation and thus the predctions are brought closer to 
 the measured values. 
 
-<center><img src="/images/framework.png" width="500" /></center>
+<center><img src="/images/framework.png" width="700" /></center>
 
 
 ## Simulator Environment
@@ -43,7 +43,7 @@ the images from 3 front mounted cameras along with the corresponding steering an
 
 To generate the training data, the car was driven around the track in the forward direction for about 6 laps and in the reverse direction for about 4 laps. The idea was to make sure the model generalizes to lanes curving to either sides of the car. This gave a good enough distribution of steering angle as shown below
 
-<center><img src="/images/steering_dist.png" width="500" /></center>
+<center><img src="/images/steering_dist.png" width="700" /></center>
 
 ## Data Preprocessing and Augmentation
 
@@ -69,11 +69,11 @@ In order to make the model less sensitve to the scene lighting and texture, two 
   
 3. **Cropping the image**
 	Parts of the image representing the farfield is cropped off so that the model sees less noise and learns mostly from the lane information. To achieve this the top and bottom of the image is cropped to retain only the lane information. The cropping is also achieved in batches using the Cropping2D layer in keras. 
-		<center><img src="/images/cropped.png" width="500" /></center>
+		<center><img src="/images/cropped.png" width="700" /></center>
 
 4. **Flipping the image** 
 	Since the car was driven in a loop it mostly takes a left turn during training. To add balance to the dataset, the images and the steering angles are flipped and the new data is added to the training and validation datasets. 
-	<center><img src="/images/flipped.png" width="500" /></center>
+	<center><img src="/images/flipped.png" width="700" /></center>
 
 5. **Steering correction**
    Since the steering angle value corresponds to the center dash camera, for images from the left and the right cameras, a correction value needs to be defined. A value of 0.2 was suggested in the lecture videos. For the current model the following correction was used 
