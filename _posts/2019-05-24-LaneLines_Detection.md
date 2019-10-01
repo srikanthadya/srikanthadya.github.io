@@ -64,9 +64,9 @@ A kernel size of [9 x 9] was used in this case.
 Canny edge detection is a technique used to identify gradients of any orientation in an image that helps us extract the structural information in an image. The algorithm internally performs the following four steps  
 1. Gaussian blurring to smooth the input image  
 2. Finding intensity gradients $G_x$ and $G_y$  
-<a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" title="Edge Magnitude = \sqrt{G_{x}^2+G_{y}^2}" /></a>
+><center><a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Magnitude&space;=&space;\sqrt{G_{x}^2&plus;G_{y}^2}" title="Edge Magnitude = \sqrt{G_{x}^2+G_{y}^2}" /></a>
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Orientation&space;(\theta)&space;=&space;tan^{-1}(\frac{G_y}{G_x})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Orientation&space;(\theta)&space;=&space;tan^{-1}(\frac{G_y}{G_x})" title="Edge Orientation (\theta) = tan^{-1}(\frac{G_y}{G_x})" /></a> 
+><a href="https://www.codecogs.com/eqnedit.php?latex=Edge&space;Orientation&space;(\theta)&space;=&space;tan^{-1}(\frac{G_y}{G_x})" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Edge&space;Orientation&space;(\theta)&space;=&space;tan^{-1}(\frac{G_y}{G_x})" title="Edge Orientation (\theta) = tan^{-1}(\frac{G_y}{G_x})" /></a></center>
 3. Non Maxima suppression  
 >The entire image is scanned to check for any unwanted pixels that might not constitute an edge. Every pixel is compared with the pixels in a 3x3 neighborhood. If the magnitude of the central pixel is greater than the pixels in the gradient direction the central pixel is retained or else dropped.  
 4. Hysteresis Thresholding  
@@ -83,13 +83,12 @@ Canny edge detection is a technique used to identify gradients of any orientatio
  
 The canny edge detecfor needs two thresholds values that are tunable. The function used in this implementation tries to make it a single parameter function by using the mean of the image and setting the lower and upper threshold as below
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=mean&space;=&space;mean\&space;of\&space;the\&space;image\&space;tensor" target="_blank"><img src="https://latex.codecogs.com/gif.latex?mean&space;=&space;mean\&space;of\&space;the\&space;image\&space;tensor" title="mean = mean\ of\ the\ image\ tensor" /></a>
-
+<center><a href="https://www.codecogs.com/eqnedit.php?latex=mean&space;=&space;mean\&space;of\&space;the\&space;image\&space;tensor" target="_blank"><img src="https://latex.codecogs.com/gif.latex?mean&space;=&space;mean\&space;of\&space;the\&space;image\&space;tensor" title="mean = mean\ of\ the\ image\ tensor" /></a>
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=threshold_{lower}&space;=&space;mean&space;*&space;(1-\sigma)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?threshold_{lower}&space;=&space;mean&space;*&space;(1-\sigma)" title="threshold_{lower} = mean * (1-\sigma)" /></a>
 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=threshold_{upper}&space;=&space;mean&space;*&space;(1&plus;\sigma)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?threshold_{upper}&space;=&space;mean&space;*&space;(1&plus;\sigma)" title="threshold_{upper} = mean * (1+\sigma)" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=threshold_{upper}&space;=&space;mean&space;*&space;(1&plus;\sigma)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?threshold_{upper}&space;=&space;mean&space;*&space;(1&plus;\sigma)" title="threshold_{upper} = mean * (1+\sigma)" /></a></center>
 
 $\sigma$ is the single tunable parameter and the default value is set to 0.33 which seems to work well. 
  
@@ -129,7 +128,7 @@ The same line when transformed in the $m-b$ space will be a point as shown in th
 Where this representation fails is when the line is vertical with an infinite slope. To over come this, the $\rho-\theta$ space is used. The same line in $\rho-\theta$  space can be represented as 
 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\rho&space;=&space;x*cos(\theta)&space;&plus;&space;y*sin(\theta)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\rho&space;=&space;x*cos(\theta)&space;&plus;&space;y*sin(\theta)" title="\rho = x*cos(\theta) + y*sin(\theta)" /></a>
+<center><a href="https://www.codecogs.com/eqnedit.php?latex=\rho&space;=&space;x*cos(\theta)&space;&plus;&space;y*sin(\theta)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\rho&space;=&space;x*cos(\theta)&space;&plus;&space;y*sin(\theta)" title="\rho = x*cos(\theta) + y*sin(\theta)" /></a></center>
 
 
 In the image below we have two points (5,25) and (20,10) represented as edge points. If we plot all the $\rho$ values corresponding to $\theta$ varying from $[-90^0  to  90^0]$, we see that the resulting $\rho - \theta$ curves for these two points intersect at $\rho = 21$ and $\theta = 45^0$
@@ -189,7 +188,7 @@ The average slope of these lines making up the left and right lines can be obtai
 Using the averaged line slopes and intercepts , we can find the x co-ordinate of the start and end of the line 
 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=leftStartX&space;=&space;(leftStartY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;leftEndX&space;=&space;(leftEndY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;rightStartX&space;=&space;(rightStartY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope&space;\\&space;rightEndX&space;=&space;(rightEndY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?leftStartX&space;=&space;(leftStartY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;leftEndX&space;=&space;(leftEndY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;rightStartX&space;=&space;(rightStartY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope&space;\\&space;rightEndX&space;=&space;(rightEndY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope$$" title="leftStartX = (leftStartY - leftAvgIntercept) / leftAvgSlope \\ leftEndX = (leftEndY - leftAvgIntercept) / leftAvgSlope \\ rightStartX = (rightStartY - rightAvgIntercept) / rightAvgSlope \\ rightEndX = (rightEndY - rightAvgIntercept) / rightAvgSlope$$" /></a>
+<center><a href="https://www.codecogs.com/eqnedit.php?latex=leftStartX&space;=&space;(leftStartY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;leftEndX&space;=&space;(leftEndY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;rightStartX&space;=&space;(rightStartY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope&space;\\&space;rightEndX&space;=&space;(rightEndY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?leftStartX&space;=&space;(leftStartY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;leftEndX&space;=&space;(leftEndY&space;-&space;leftAvgIntercept)&space;/&space;leftAvgSlope&space;\\&space;rightStartX&space;=&space;(rightStartY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope&space;\\&space;rightEndX&space;=&space;(rightEndY&space;-&space;rightAvgIntercept)&space;/&space;rightAvgSlope$$" title="leftStartX = (leftStartY - leftAvgIntercept) / leftAvgSlope \\ leftEndX = (leftEndY - leftAvgIntercept) / leftAvgSlope \\ rightStartX = (rightStartY - rightAvgIntercept) / rightAvgSlope \\ rightEndX = (rightEndY - rightAvgIntercept) / rightAvgSlope$$" /></a></center>
 
 
 As was the case with the masks, since the views are different between the two sets of videos, the challenge video uses a different EndY value than the other two videos. 
