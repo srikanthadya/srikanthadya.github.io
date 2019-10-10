@@ -27,7 +27,7 @@ In order to reduce the vehicle's oscillation explained above, the diffrential te
 
 A vehicle might have an inherent bias like a steering drift which will prevent it from achievng a zero CTE. To counter this, the CTE is accumulated and a correction proportional to the accumulated error is added.
 
-![PID_image](https://github.com/srikanthadya/CarND-PID-Control-Project/blob/master/twiddle.png)
+![PID_image](/images/Twiddle1.png)
 
 ## Tuning the PID coefficients
 
