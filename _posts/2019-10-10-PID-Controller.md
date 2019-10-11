@@ -40,3 +40,7 @@ Once we have an initial value for the three parameters, we allow the twiddle alg
 ## Video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mxTvz2GgP0Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Well Explained
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4Y7zG48uHRo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
